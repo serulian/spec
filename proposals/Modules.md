@@ -4,8 +4,10 @@ Modules will provide the basic organization building block in Serulian.
 
 ### Basic Definition
 
-A module is defined as a single Serulian file (ending in `.seru`) that **exports** some set of types
-or functions to be accessible to other modules.
+A module is defined as a single Serulian file (ending in `.seru`) or a directory containing `.seru`
+files that **exports** some set of types or functions to be accessible to other modules.
+
+If a module is imported as a directory, the module is defined as all the `.seru` files imported together.
 
 ### Using modules
 
@@ -50,7 +52,7 @@ Imports of local file-based modules are accomplished by checking the following p
 
 Git-based modules will be stored under the `pkg` directory under the current working directory by replicating the URL structure:
 
-Example: `pkg/github.com/bar/bar/38fa35`
+Example: `pkg/github.com/bar/bar/{kind}/38fa35` where {kind} is one of: `branch`, `tag`, `commit`.
 
 Imports of Git-based modules are accomplished as follows:
 
